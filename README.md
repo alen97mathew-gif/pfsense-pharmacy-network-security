@@ -24,19 +24,16 @@ The goal was to place a pfSense firewall between the ISP/WAN connection and a sm
 ## Network Architecture
 
 ```mermaid
-flowchart LR
-    Internet((Internet / ISP))
-    WAN["WAN — eth0"]
-    FW["pfSense Firewall<br/>Gateway: 192.168.1.1<br/>Kea DHCP / DNS Resolver<br/>pfBlockerNG + DNSBL<br/>Snort IDS/IPS"]
-    LAN["LAN — eth1"]
-    SW["Network Switch"]
-    PH1["PH1<br/>192.168.1.100"]
-    PH2["PH2<br/>192.168.1.101"]
-
-    Internet --> WAN --> FW --> LAN --> SW
-    SW --> PH1
-    SW --> PH2
+flowchart TD
+    ISP["Internet / ISP"] -->|WAN: eth0| FW["pfSense — 192.168.1.1"]
+    FW -->|LAN: eth1| SW["LAN switch — 192.168.1.0/24"]
+    SW --> PH1["PH1 — 192.168.1.100"]
+    SW --> PH2["PH2 — 192.168.1.101"]
 ```
+
+![Network topology](diagrams/network-topology.svg)
+
+The firewall provides NAT, Kea DHCP, DNS Resolver, pfBlockerNG/DNSBL and Snort monitoring on LAN/WAN.
 
 A standalone SVG version is available at [`diagrams/network-topology.svg`](diagrams/network-topology.svg).
 
@@ -106,7 +103,7 @@ The project applies **defense in depth**: firewall policy limits connectivity, D
 
 ## Validation
 
-Testing included:
+The project validation checklist covers the following checks. Sanitized test results and screenshots are not yet included in this repository:
 
 - Confirming PH1/PH2 received valid LAN addressing and gateway/DNS information
 - Verifying normal Internet connectivity after firewall changes
@@ -127,7 +124,7 @@ The final documented build focuses on the flat pharmacy LAN shown above. **VLAN 
 
 ## Screenshots
 
-The `screenshots/` folders are placeholders for sanitized screenshots from the original deployment. Before committing an image, remove or blur:
+See the [screenshot guide](screenshots/README.md). The `screenshots/` folders are placeholders for sanitized screenshots from the original deployment. Before committing an image, remove or blur:
 
 - Public IP addresses
 - Hostnames that identify a customer/site

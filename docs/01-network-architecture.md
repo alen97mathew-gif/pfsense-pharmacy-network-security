@@ -6,29 +6,15 @@ Protect a small pharmacy LAN by placing pfSense at the network perimeter and cen
 
 ## Logical topology
 
-```text
-                 Internet / ISP
-                       |
-                    [eth0]
-                       |
-                +--------------+
-                |   pfSense    |
-                | 192.168.1.1  |
-                | Firewall/NAT |
-                | Kea + DNS    |
-                | pfBlockerNG  |
-                | Snort        |
-                +--------------+
-                       |
-                    [eth1]
-                       |
-                    Switch
-                   /      \
-                  /        \
-        PH1 .100             PH2 .101
-
-              LAN: 192.168.1.0/24
+```mermaid
+flowchart TD
+    ISP["Internet / ISP"] -->|WAN: eth0| FW["pfSense — 192.168.1.1"]
+    FW -->|LAN: eth1| SW["LAN switch — 192.168.1.0/24"]
+    SW --> PH1["PH1 — 192.168.1.100"]
+    SW --> PH2["PH2 — 192.168.1.101"]
 ```
+
+![Network topology](../diagrams/network-topology.svg)
 
 ## Interfaces
 

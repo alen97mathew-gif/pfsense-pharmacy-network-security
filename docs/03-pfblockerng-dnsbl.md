@@ -14,16 +14,12 @@ pfBlockerNG-devel extended the firewall with reputation and domain-based filteri
 
 ## DNSBL flow
 
-```text
-LAN Client
-   |
-   | DNS request
-   v
-pfSense DNS Resolver
-   |
-   +--> Allowed domain -> normal resolution
-   |
-   +--> DNSBL match -> blocked/sinkholed according to configuration
+```mermaid
+flowchart TD
+    Client["LAN client"] --> Resolver["pfSense DNS Resolver"]
+    Resolver --> Match{"DNSBL match?"}
+    Match -->|No| Allowed["Normal resolution"]
+    Match -->|Yes| Blocked["Configured block or sinkhole response"]
 ```
 
 ## Validation approach

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="690" viewBox="0 0 960 690" role="img" aria-labelledby="title desc">
+<title id="title">pfSense pharmacy network topology</title><desc id="desc">Internet connects to pfSense WAN eth0. LAN eth1 connects to a switch serving PH1 and PH2 on 192.168.1.0/24. pfSense supplies Kea DHCP, DNS filtering and Snort monitoring.</desc>
+<style>text{font-family:Arial,sans-serif;fill:#173354}.title{font-size:20px;font-weight:700}.detail{font-size:16px}.label{font-size:15px}</style>
+<rect width="960" height="690" fill="#f1f5fa"/><text x="480" y="40" text-anchor="middle" class="title">Pharmacy network security</text>
+<g stroke="#375b85" stroke-width="3" fill="none"><path d="M480 145V205M480 325V400M480 480V520H235V555M480 520H725V555"/></g>
+<rect x="310" y="65" width="340" height="80" rx="14" fill="#fff" stroke="#375b85" stroke-width="2"/><text x="480" y="95" text-anchor="middle" class="title">Internet / ISP</text><text x="480" y="120" text-anchor="middle" class="detail">WAN addressing omitted</text>
+<text x="495" y="182" class="label">WAN · eth0</text>
+<rect x="220" y="205" width="520" height="120" rx="14" fill="#fff" stroke="#375b85" stroke-width="2"/><text x="480" y="235" text-anchor="middle" class="title">pfSense · 192.168.1.1</text><text x="480" y="260" text-anchor="middle" class="detail">Stateful firewall / NAT · Kea DHCP · DNS Resolver</text>
+<text x="480" y="292" text-anchor="middle" class="detail">pfBlockerNG / DNSBL · Snort on LAN and WAN</text>
+<text x="495" y="364" class="label">LAN · eth1</text>
+<rect x="270" y="400" width="420" height="80" rx="14" fill="#fff" stroke="#375b85" stroke-width="2"/><text x="480" y="430" text-anchor="middle" class="title">LAN switch</text><text x="480" y="455" text-anchor="middle" class="detail">192.168.1.0/24</text>
+<rect x="75" y="555" width="320" height="80" rx="14" fill="#fff" stroke="#375b85" stroke-width="2"/><text x="235" y="585" text-anchor="middle" class="title">PH1</text><text x="235" y="610" text-anchor="middle" class="detail">192.168.1.100</text>
+<rect x="565" y="555" width="320" height="80" rx="14" fill="#fff" stroke="#375b85" stroke-width="2"/><text x="725" y="585" text-anchor="middle" class="title">PH2</text><text x="725" y="610" text-anchor="middle" class="detail">192.168.1.101</text>
+<text x="480" y="671" text-anchor="middle" class="label">Kea DHCP pool: 192.168.1.100–192.168.1.199 · Sanitized logical topology</text></svg>

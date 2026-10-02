@@ -1,5 +1,7 @@
 # Testing and Validation
 
+> **Evidence status:** This is a validation plan. No captured test results have been committed yet; unchecked items must not be treated as passed tests.
+
 Use this checklist to demonstrate that the security controls worked without exposing sensitive information.
 
 ## A. Connectivity and DHCP

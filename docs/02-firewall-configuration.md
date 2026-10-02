@@ -31,4 +31,4 @@ Before changing LAN management rules:
 - Confirm WebGUI/SSH access after each relevant policy change.
 - Avoid deleting anti-lockout protection until an equivalent management rule is confirmed.
 
-See `configs/firewall-policy.md` for a sanitized policy matrix.
+See the [sanitized policy matrix](../configs/firewall-policy.md) for a sanitized policy matrix.
