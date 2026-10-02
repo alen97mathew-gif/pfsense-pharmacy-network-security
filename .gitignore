@@ -1,0 +1,23 @@
+# pfSense / secrets
+config.xml
+*config*.xml
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+.env
+.env.*
+secrets/
+backups/
+private/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Archives
+*.zip
